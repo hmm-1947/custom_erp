@@ -30,7 +30,7 @@ app_include_js = "/assets/custom_layer/js/custom_layer.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/custom_layer/css/custom_layer.css"
-# web_include_js = "/assets/custom_layer/js/custom_layer.js"
+web_include_js = "/assets/custom_layer/js/custom_layer.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "custom_layer/public/scss/website"
@@ -86,7 +86,20 @@ app_include_js = "/assets/custom_layer/js/custom_layer.js"
 # ------------
 
 # before_install = "custom_layer.install.before_install"
-# after_install = "custom_layer.install.after_install"
+after_install = "custom_layer.setup.set_default_logos"
+
+# Login CAPTCHA
+# -------------
+before_login = ["custom_layer.recaptcha.before_login"]
+
+# after_migrate
+# -------------
+after_migrate = "custom_layer.setup.set_default_logos"
+
+# Branding
+# --------
+# Blank the app name ("ERPNext") shown as the sidebar subtitle.
+extend_bootinfo = ["custom_layer.branding.extend_bootinfo"]
 
 # Uninstallation
 # ------------

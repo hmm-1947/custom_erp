@@ -1,0 +1,9 @@
+/* Hide our theme-swapped logos until custom_layer.js sets the correct
+   theme-aware src. Prevents a flash of the default Frappe logo before
+   our JS runs. JS adds the "logo-ready" class once it has set the src. */
+#brand-logo:not(.logo-ready),
+.navbar-brand .app-logo:not(.logo-ready),
+.splash img:not(.logo-ready),
+.page-card-head .app-logo:not(.logo-ready) {
+    visibility: hidden;
+}
